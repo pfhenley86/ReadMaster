@@ -1,6 +1,6 @@
 namespace BookMasterTests;
 
-public class BookClassTests
+public class BookModelTests
 {
     
 }

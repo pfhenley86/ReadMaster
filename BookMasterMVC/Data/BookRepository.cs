@@ -15,7 +15,7 @@ public class BookRepository : IBookRepository
 
     public IEnumerable<Book> GetAllBooks()
     {
-        return _connection.Query<Book>("SELECT * FROM Books");
+        return _connection.Query<Book>("SELECT * FROM books");
     }
 
     public Book GetBook(int id)
