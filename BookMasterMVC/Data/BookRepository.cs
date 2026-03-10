@@ -1,17 +1,21 @@
+using System.Data;
 using BookMasterMVC.Models;
+using Dapper;
 
 namespace BookMasterMVC.Data;
 
 public class BookRepository : IBookRepository
 {
-    public List<Book> _books = new List<Book>
+    private readonly IDbConnection _connection;
+
+    public BookRepository(IDbConnection connection)
     {
-        new Book { Title = "Clean Code", Author = "Robert C. Martin", Status = "Read" }
-    };
+        _connection = connection;
+    }
 
     public IEnumerable<Book> GetAllBooks()
     {
-        throw new NotImplementedException();
+        return _connection.Query<Book>("SELECT * FROM Books");
     }
 
     public Book GetBook(int id)
