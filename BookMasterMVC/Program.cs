@@ -1,7 +1,21 @@
+using System.Data;
+using BookMasterMVC.Data;
+using MySql.Data.MySqlClient;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Add DB Connection
+builder.Services.AddScoped<IDbConnection>((s) =>
+{
+    IDbConnection conn = new MySqlConnection(builder.Configuration.GetConnectionString("BookMaster"));
+    conn.Open();
+    return conn;
+});
+
+builder.Services.AddTransient<IBookRepository, BookRepository>();
 
 var app = builder.Build();
 
