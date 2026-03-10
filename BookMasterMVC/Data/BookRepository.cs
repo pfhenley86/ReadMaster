@@ -9,13 +9,28 @@ public class BookRepository : IBookRepository
         new Book { Title = "Clean Code", Author = "Robert C. Martin", Status = "Read" }
     };
 
-    public List<Book> GetAll()
+    public IEnumerable<Book> GetAllBooks()
     {
-        return _books;
+        throw new NotImplementedException();
     }
 
-    public void Add(Book book)
+    public Book GetBook(int id)
     {
-        _books.Add(book);
+        throw new NotImplementedException();
+    }
+
+    public void InsertBook(Book book)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void UpdateBook(Book book)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void DeleteBook(Book book)
+    {
+        throw new NotImplementedException();
     }
 }
