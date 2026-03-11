@@ -8,5 +8,7 @@ public interface IBookRepository
     public Book GetBook(int id);
     public void InsertBook(Book book);
     public void UpdateBook(Book book);
+    public IEnumerable<Status> GetStatus();
+    public Book AssignStatus();
     public void DeleteBook(Book book);
 }
