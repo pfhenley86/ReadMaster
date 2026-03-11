@@ -19,7 +19,7 @@
     
     <p>
         <strong>Author:</strong>
-        @Model.Authors?.FirstOrDefault()
+        @Model.Author?.FirstOrDefault()
     </p>
     
     <img src="@Model.ImageLinks?.Thumbnail" />
@@ -27,7 +27,7 @@
     <p>@Model.Description</p>
     
     <a href="/Books/InsertBook?title@Model.Title&
-    author=@Model.Authors?.FirstOrDefault()&
+    author=@Model.Author?.FirstOrDefault()&
     description=@Model.Description"&
        cover="@Model.ImageLinks?.Thumbnail">
         Add Book
