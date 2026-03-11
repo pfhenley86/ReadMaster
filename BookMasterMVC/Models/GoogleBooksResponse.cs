@@ -15,7 +15,7 @@ public class Item
 public class VolumeInfo
 {
     public string Title { get; set; }
-    public List<string> Authors { get; set; }
+    public List<string> Author { get; set; }
     public string Description { get; set; }
     public ImageLinks ImageLinks { get; set; }
 }

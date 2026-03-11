@@ -1,0 +1,32 @@
+@model Book
+
+<h2>Add A Book To Your Library</h2>
+
+@using (Html.BeginForm("InsertBookToDatabase", "Books", "Post"))
+{
+    <input asp-for="BookID" type="hidden" value=""/>
+    
+    <label asp-for="Title" class="control-label">Title</label>
+    <input type="text" name="Title" class="form-control"/>
+    
+    <label asp-for="Author" class="control-label">Author</label>
+    <input type="text" name="Author" class="form-control"/>
+    
+    <label asp-for="Description" class="control-label">Description</label>
+    <input type="text" name="Description" class="form-control"/>
+    
+    <label asp-for="ImageLink" class="control-label">Cover</label>
+    <input type="text" name="ImageLinks" class="form-control"/>
+    
+    <div class="form-group">
+        <label for="">Select a Status</label>
+        <select class="form-control" name="statusID" aria-valuemax="">
+            @foreach (var status in Model.Status)
+            {
+                <option value="@status.StatusID">@status.StatusID @status.StatusName</option>
+            }
+        </select>
+    </div>
+    
+    <input type="submit" value="Add Book" class="btn btn-primary"/>
+}
