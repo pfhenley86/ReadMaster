@@ -116,3 +116,4 @@
 /Users/fordhenley/Documents/GitHub/repos/ReadMaster/BookMasterMVC/bin/Debug/net10.0/runtimes/win/lib/net8.0/System.Windows.Extensions.dll
 /Users/fordhenley/Documents/GitHub/repos/ReadMaster/BookMasterMVC/obj/Debug/net10.0/BookMasterMVC.csproj.AssemblyReference.cache
 /Users/fordhenley/Documents/GitHub/repos/ReadMaster/BookMasterMVC/obj/Debug/net10.0/BookMast.B93A8FA3.Up2Date
+/Users/fordhenley/Documents/GitHub/repos/ReadMaster/BookMasterMVC/bin/Debug/net10.0/Newtonsoft.Json.dll

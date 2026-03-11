@@ -20,21 +20,39 @@ public class BookRepository : IBookRepository
 
     public Book GetBook(int id)
     {
-        throw new NotImplementedException();
+        return _connection.QuerySingle<Book>("SELECT * FROM books WHERE BookID = @id;", new { id });
     }
 
-    public void InsertBook(Book book)
+    /**ToDo */
+    public void InsertBook(Book bookToInsert)
     {
-        throw new NotImplementedException();
+       _connection.Execute("INSERT INTO books (TITLE, AUTHOR, STATUS) VALUES (@title, @author, @statusID);",
+           new { title = bookToInsert.Title, author = bookToInsert.Author, bookID = bookToInsert.BookID });
     }
 
     public void UpdateBook(Book book)
     {
-        throw new NotImplementedException();
+        _connection.Execute("UPDATE books SET Title = @title, Author = @author WHERE BookID = @bookID;", 
+            new { book.Title, book.Author, bookID = book.BookID });
     }
+
+    public IEnumerable<Status> GetStatus()
+    {
+        return _connection.Query<Status>("SELECT * FROM status");
+    }
+
+    public Book AssignStatus()
+    {
+        var statusList = GetStatus();
+        var book = new Book();
+        book.Status = statusList;
+        return book;
+    }
+
+    // Status Methods
 
     public void DeleteBook(Book book)
     {
-        throw new NotImplementedException();
+        _connection.Execute("DELETE From books WHERE BookID = @bookID;", new { book.BookID });
     }
 }
