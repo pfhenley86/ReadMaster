@@ -1,0 +1,30 @@
+@model VolumeInfo
+
+<h2>Search Books</h2>
+
+<form method="post">
+    <input name="query" placeholder="Search Title or ISBN" />
+    <button type="submit">Search</button>
+</form>
+
+@if (Model != null)
+{
+    <hr/>
+    <h3>@Model.Title</h3>
+    
+    <p>
+        <strong>Author:</strong>
+        @Model.Authors?.FirstOrDefault()
+    </p>
+    
+    <img src="@Model.ImageLinks?.Thumbnail" />
+    
+    <p>@Model.Description</p>
+    
+    <a href="/Books/Create?title@Model.Title&
+    author=@Model.Authors?.FirstOrDefault()&
+    description=@Model.Description"&
+       cover="@Model.ImageLinks?.Thumbnail">
+        Add Book
+    </a>
+}

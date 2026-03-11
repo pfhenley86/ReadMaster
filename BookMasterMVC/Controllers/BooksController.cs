@@ -1,14 +1,17 @@
 using BookMasterMVC.Data;
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
 using BookMasterMVC.Models;
+using Newtonsoft.Json;
+using System.Linq;
 
 namespace BookMasterMVC.Controllers;
 
-public class BookController : Controller
+public class BooksController : Controller
 {
     private readonly IBookRepository _repository;
 
-    public BookController(IBookRepository repository)
+    public BooksController(IBookRepository repository)
     {
         _repository = repository;
     }
@@ -48,14 +51,18 @@ public class BookController : Controller
     }
     
     // Create Book Form View
-    public IActionResult InsertBook()
+    public IActionResult InsertBook(string title, string author)
     {
         var book = _repository.AssignStatus();
+
+        book.Title = title;
+        book.Author = author;
+        
         return View(book);
     }
     
     // Create Book
-    public IActionResult InsertBookToDatabase(Book book)
+    public IActionResult InsertBookToDatabase(Book bookToInsert)
     {
         _repository.InsertBook(bookToInsert);
         return RedirectToAction("Index");
@@ -66,5 +73,32 @@ public class BookController : Controller
     {
         _repository.DeleteBook(book);
         return RedirectToAction("Index");
+    }
+    
+    // Search for Books
+    public IActionResult Search()
+    {
+        return View();
+    }
+
+    [HttpPost]
+    public IActionResult Search(string query)
+    {
+        var url = $"https://www.googleapis.com/books/v1/volumes?q={query}";
+
+        using (var client = new WebClient())
+        {
+            var json = client.DownloadString(url);
+            var result = JsonConvert.DeserializeObject <GoogleBooksResponse>(json);
+            
+            if (result == null || result.Items == null || result.Items.Count == 0)
+            {
+                ViewBag.Message = "No books found.";
+                return View();
+            }
+            
+            var book = result?.Items?.First()?.VolumeInfo;
+            return View(book);
+        }
     }
 }

@@ -22,12 +22,11 @@ public class BookRepository : IBookRepository
     {
         return _connection.QuerySingle<Book>("SELECT * FROM books WHERE BookID = @id;", new { id });
     }
-
-    /**ToDo */
+    
     public void InsertBook(Book bookToInsert)
     {
-       _connection.Execute("INSERT INTO books (TITLE, AUTHOR, STATUS) VALUES (@title, @author, @statusID);",
-           new { title = bookToInsert.Title, author = bookToInsert.Author, bookID = bookToInsert.BookID });
+        _connection.Execute("INSERT INTO books (Title, Author, StatusID) VALUES (@Title, @Author, @StatusID);",
+            new { Title = bookToInsert.Title, Author = bookToInsert.Author, StatusID = bookToInsert.StatusID });
     }
 
     public void UpdateBook(Book book)
