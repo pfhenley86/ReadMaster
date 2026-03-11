@@ -1,5 +1,10 @@
 @model VolumeInfo
 
+@if (ViewBag.Message != null)
+{
+    <p>@ViewBag.Message</p>
+}
+
 <h2>Search Books</h2>
 
 <form method="post">

@@ -10,10 +10,12 @@ namespace BookMasterMVC.Controllers;
 public class BooksController : Controller
 {
     private readonly IBookRepository _repository;
+    private readonly IConfiguration _configuration;
 
-    public BooksController(IBookRepository repository)
+    public BooksController(IBookRepository repository, IConfiguration configuration)
     {
         _repository = repository;
+        _configuration = configuration;
     }
     
     // GET Books
@@ -84,7 +86,9 @@ public class BooksController : Controller
     [HttpPost]
     public IActionResult Search(string query)
     {
-        var url = $"https://www.googleapis.com/books/v1/volumes?q={query}";
+        var apiKey = _configuration["GoogleBooks:ApiKey"];
+        
+        var url = $"https://www.googleapis.com/books/v1/volumes?q={query}&key={apiKey}";
 
         using (var client = new WebClient())
         {
