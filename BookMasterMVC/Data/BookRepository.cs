@@ -13,6 +13,11 @@ public class BookRepository : IBookRepository
         _connection = connection;
     }
 
+    public BookRepository()
+    {
+        throw new NotImplementedException();
+    }
+
     public IEnumerable<Book> GetAllBooks()
     {
         return _connection.Query<Book>("SELECT * FROM books");
