@@ -1,4 +1,6 @@
 using BookMasterMVC.Data;
+using BookMasterMVC.Models;
+using MySql.Data.MySqlClient;
 
 namespace BookMasterTests;
 
@@ -9,7 +11,14 @@ public class BookRepositoryTests
     public void GetAllBooks_ReturnsAListOfBooks()
     {
         // Arrange
-        var repo = new BookRepository();
+        // Get your connection string (from a config file or hardcoded for the final)
+        string connString = "server=localhost;database=BookMaster;user=root;password=password";
+    
+        // Create the MySQL connection object the constructor is asking for
+        using var connection = new MySqlConnection(connString);
+    
+        // Pass it into the repository to satisfy the constructor
+        var repo = new BookRepository(connection);
 
         // Act
         var books = repo.GetAllBooks();
@@ -23,7 +32,14 @@ public class BookRepositoryTests
     public void GetAllBooks_ReturnsAtLeastOneBook()
     {
         // Arrange
-        var repo = new BookRepository();
+        // Get your connection string (from a config file or hardcoded for the final)
+        string connString = "server=localhost;database=BookMaster;user=root;password=password";
+    
+        // Create the MySQL connection object the constructor is asking for
+        using var connection = new MySqlConnection(connString);
+    
+        // Pass it into the repository to satisfy the constructor
+        var repo = new BookRepository(connection);
         
         // Act
         var books = repo.GetAllBooks();
@@ -32,7 +48,7 @@ public class BookRepositoryTests
         Assert.NotEmpty(books);
     }
     
-    // Test Book can be assigned a Status.
+    //Test Book can be assigned a Status.
     // [Theory]
     // [InlineData("Reading")]
     // [InlineData("Read")]
@@ -45,27 +61,4 @@ public class BookRepositoryTests
     //     // Assert
     //     Assert.Equal(status, book.Status);
     // }
-    
-    // Test if a book can be added
-    // [Fact]
-    // public void Add_AddsBookToRepository()
-    // {
-    //     // Arrange
-    //     var repo = new BookRepository();
-    //     
-    //     var book = new Book
-    //     {
-    //         Title = "The Pragmatic Programmer",
-    //         Author = "Andrew Hunt",
-    //         Status = "Reading"
-    //     };
-    //     
-    //     repo.Add(book);
-    //     
-    //     // Act
-    //     var books = repo.GetAllBooks();
-    //     
-    //     // Assert
-    //     Assert.Contains(books, b => b.Title == "The Pragmatic Programmer");
-    //}
 }

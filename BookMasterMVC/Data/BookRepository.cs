@@ -7,6 +7,13 @@ namespace BookMasterMVC.Data;
 public class BookRepository : IBookRepository
 {
     private readonly IDbConnection _connection;
+    
+    // Add this so "new BookRepository()" works for testing
+    public BookRepository() 
+    {
+        // Initialize your connection string/connection here if it's not already
+    }
+
 
     public BookRepository(IDbConnection connection)
     {
