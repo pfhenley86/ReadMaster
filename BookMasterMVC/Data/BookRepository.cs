@@ -8,7 +8,7 @@ public class BookRepository : IBookRepository
 {
     private readonly IDbConnection _connection;
     
-    // Add this so "new BookRepository()" works for testing
+    // Default constructor for testing Repo
     public BookRepository() 
     {
         // Initialize your connection string/connection here if it's not already

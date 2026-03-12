@@ -1,0 +1,26 @@
+@model Book
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>@Model.Title</h2>
+            <h3>By: @Model.Author</h3>
+        </div>
+        <div class="row p-2 mb-2">
+            <div class="col col-md-3">
+                <img src="@Model.ImageLink" alt="@Model.Title" class="img-fluid w-100"/>
+            </div>
+            <div class="col col-md-9">
+                <p>@Model.Description</p>
+                <a class="btn btn-primary" href="/Books/Update/@Model.BookID">Edit</a>
+                @using (Html.BeginForm("DeleteBook", "Books", FormMethod.Post))
+                {
+                    <input type="hidden" asp-for="BookID" />
+
+                    <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this book?');">
+                        Delete
+                    </button>
+                }
+            </div>
+        </div>
+    </div>
+</div>
