@@ -49,7 +49,6 @@
 /Users/fordhenley/Documents/GitHub/repos/ReadMaster/BookMasterMVC/obj/Debug/net10.0/compressed/6wqfih70jd-{0}-j5mq2jizvt-j5mq2jizvt.gz
 /Users/fordhenley/Documents/GitHub/repos/ReadMaster/BookMasterMVC/obj/Debug/net10.0/compressed/cxqg75cy4m-{0}-06098lyss8-06098lyss8.gz
 /Users/fordhenley/Documents/GitHub/repos/ReadMaster/BookMasterMVC/obj/Debug/net10.0/compressed/91vokiwgnm-{0}-nvvlpmu67g-nvvlpmu67g.gz
-/Users/fordhenley/Documents/GitHub/repos/ReadMaster/BookMasterMVC/obj/Debug/net10.0/compressed/plwrx09bk8-{0}-s35ty4nyc5-s35ty4nyc5.gz
 /Users/fordhenley/Documents/GitHub/repos/ReadMaster/BookMasterMVC/obj/Debug/net10.0/compressed/17s8a644zi-{0}-pj5nd1wqec-pj5nd1wqec.gz
 /Users/fordhenley/Documents/GitHub/repos/ReadMaster/BookMasterMVC/obj/Debug/net10.0/compressed/6su51esedy-{0}-46ein0sx1k-46ein0sx1k.gz
 /Users/fordhenley/Documents/GitHub/repos/ReadMaster/BookMasterMVC/obj/Debug/net10.0/compressed/4try335nvl-{0}-v0zj4ognzu-v0zj4ognzu.gz
@@ -117,3 +116,4 @@
 /Users/fordhenley/Documents/GitHub/repos/ReadMaster/BookMasterMVC/obj/Debug/net10.0/BookMasterMVC.csproj.AssemblyReference.cache
 /Users/fordhenley/Documents/GitHub/repos/ReadMaster/BookMasterMVC/obj/Debug/net10.0/BookMast.B93A8FA3.Up2Date
 /Users/fordhenley/Documents/GitHub/repos/ReadMaster/BookMasterMVC/bin/Debug/net10.0/Newtonsoft.Json.dll
+/Users/fordhenley/Documents/GitHub/repos/ReadMaster/BookMasterMVC/obj/Debug/net10.0/compressed/plwrx09bk8-{0}-7l2l83oy6r-7l2l83oy6r.gz
