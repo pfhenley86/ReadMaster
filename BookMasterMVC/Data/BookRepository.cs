@@ -25,8 +25,10 @@ public class BookRepository : IBookRepository
     
     public void InsertBook(Book bookToInsert)
     {
-        _connection.Execute("INSERT INTO books (Title, Author, StatusID) VALUES (@Title, @Author, @StatusID);",
-            new { Title = bookToInsert.Title, Author = bookToInsert.Author, StatusID = bookToInsert.StatusID });
+        _connection.Execute(
+            "INSERT INTO books (Title, Author, Description, ImageLink, StatusID) VALUES (@Title, @Author, @Description, @ImageLink, @StatusID);",
+            new { bookToInsert.Title, bookToInsert.Author, bookToInsert.Description, bookToInsert.ImageLink, bookToInsert.StatusID
+            });
     }
 
     public void UpdateBook(Book book)

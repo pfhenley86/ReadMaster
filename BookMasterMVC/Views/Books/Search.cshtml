@@ -31,17 +31,20 @@
     
             <p>
                 <strong>Author:</strong>
-                @Model.Author
+                @Model.Authors?.FirstOrDefault()
             </p>
     
             <img src="@Model.ImageLinks?.Thumbnail" />
     
             <p>@Model.Description</p>
     
-            <a class="btn btn-primary" href="/Books/InsertBook?title@Model.Title&
-    author=@Model.Author?.FirstOrDefault()&
-    description=@Model.Description"&
-               cover="@Model.ImageLinks?.Thumbnail">
+            <a class="btn btn-primary"
+               asp-controller="Books"
+               asp-action="InsertBook"
+               asp-route-title="@Model.Title"
+               asp-route-author="@Model.Authors?.FirstOrDefault()"
+               asp-route-description="@Model.Description"
+               asp-route-cover="@Model.ImageLinks?.Thumbnail">
                 Add Book
             </a>
         }
