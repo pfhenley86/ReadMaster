@@ -29,3 +29,9 @@ body {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
+
+nav{
+  font-family: "Offside", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
