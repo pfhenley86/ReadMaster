@@ -53,20 +53,29 @@ public class BooksController : Controller
     }
     
     // Create Book Form View
-    public IActionResult InsertBook(string title, string author)
+    public IActionResult InsertBook(string title, string author, string description, string cover)
     {
         var book = _repository.AssignStatus();
 
         book.Title = title;
         book.Author = author;
-        
+        book.Description = description;
+        book.ImageLink = cover;
+
         return View(book);
     }
     
     // Create Book
-    public IActionResult InsertBookToDatabase(Book bookToInsert)
+    [HttpPost]
+    public IActionResult InsertBookToDatabase(Book book)
     {
-        _repository.InsertBook(bookToInsert);
+        if (book.Description != null && book.Description.Length > 1000)
+        {
+            book.Description = book.Description.Substring(0, 1000);
+        }
+
+        _repository.InsertBook(book);
+
         return RedirectToAction("Index");
     }
     

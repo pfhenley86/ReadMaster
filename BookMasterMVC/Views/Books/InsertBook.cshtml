@@ -2,31 +2,31 @@
 
 <h2>Add A Book To Your Library</h2>
 
-@using (Html.BeginForm("InsertBookToDatabase", "Books", "Post"))
+@using (Html.BeginForm("InsertBookToDatabase", "Books", FormMethod.Post))
 {
     <input asp-for="BookID" type="hidden" value=""/>
     
-    <label asp-for="Title" class="control-label">Title</label>
-    <input type="text" name="Title" class="form-control"/>
-    
-    <label asp-for="Author" class="control-label">Author</label>
-    <input type="text" name="Author" class="form-control"/>
-    
-    <label asp-for="Description" class="control-label">Description</label>
-    <input type="text" name="Description" class="form-control"/>
-    
-    <label asp-for="ImageLink" class="control-label">Cover</label>
-    <input type="text" name="ImageLinks" class="form-control"/>
+    <label asp-for="Title" class="control-label"></label>
+    <input asp-for="Title" class="form-control"/>
+
+    <label asp-for="Author" class="control-label"></label>
+    <input asp-for="Author" class="form-control"/>
+
+    <label asp-for="Description" class="control-label"></label>
+    <input asp-for="Description" class="form-control"/>
+
+    <label asp-for="ImageLink" class="control-label"></label>
+    <input asp-for="ImageLink" class="form-control"/>
     
     <div class="form-group">
-        <label for="">Select a Status</label>
-        <select class="form-control" name="statusID" aria-valuemax="">
+        <label>Select a Status</label>
+        <select class="form-control" name="StatusID">
             @foreach (var status in Model.Status)
             {
-                <option value="@status.StatusID">@status.StatusID @status.StatusName</option>
+                <option value="@status.StatusID">@status.StatusName</option>
             }
         </select>
     </div>
-    
+
     <input type="submit" value="Add Book" class="btn btn-primary"/>
 }

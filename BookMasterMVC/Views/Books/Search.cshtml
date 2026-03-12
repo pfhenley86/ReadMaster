@@ -5,31 +5,48 @@
     <p>@ViewBag.Message</p>
 }
 
-<h2>Search Books</h2>
+<div class="container">
+    <div class="col-md-12">
+        <h2>Search Books</h2>
+    </div>
+</div>
 
-<form method="post">
-    <input name="query" placeholder="Search Title or ISBN" />
-    <button type="submit">Search</button>
-</form>
+<div class="container">
+    <div class="col-md-12">
+        <form method="post">
+            <div class="form-group">
+                <input type="search" class="form-control" name="query" placeholder="Search Title or ISBN"/>
+                <button type="submit" class="btn btn-primary">Search</button>
+            </div>
+        </form>
+    </div>
+</div>
 
-@if (Model != null)
-{
-    <hr/>
-    <h3>@Model.Title</h3>
+<div class="container">
+    <div class="col-md-12">
+        @if (Model != null)
+        {
+            <hr/>
+            <h3>@Model.Title</h3>
     
-    <p>
-        <strong>Author:</strong>
-        @Model.Author?.FirstOrDefault()
-    </p>
+            <p>
+                <strong>Author:</strong>
+                @Model.Authors?.FirstOrDefault()
+            </p>
     
-    <img src="@Model.ImageLinks?.Thumbnail" />
+            <img src="@Model.ImageLinks?.Thumbnail" />
     
-    <p>@Model.Description</p>
+            <p>@Model.Description</p>
     
-    <a href="/Books/InsertBook?title@Model.Title&
-    author=@Model.Author?.FirstOrDefault()&
-    description=@Model.Description"&
-       cover="@Model.ImageLinks?.Thumbnail">
-        Add Book
-    </a>
-}
+            <a class="btn btn-primary"
+               asp-controller="Books"
+               asp-action="InsertBook"
+               asp-route-title="@Model.Title"
+               asp-route-author="@Model.Authors?.FirstOrDefault()"
+               asp-route-description="@Model.Description"
+               asp-route-cover="@Model.ImageLinks?.Thumbnail">
+                Add Book
+            </a>
+        }
+    </div>
+</div>
