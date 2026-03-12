@@ -1,0 +1,30 @@
+@model Book
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Update @Model.Title</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            @using (Html.BeginForm("UpdateBookToDatabase", "Books", FormMethod.Post))
+            {
+                <input asp-for="BookID" type="hidden" value="@Model.BookID" />
+
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" value="@Model.Title"/>
+
+                <label asp-for="Author" class="control-label"></label>
+                <input asp-for="Author" class="form-control" value="@Model.Author"/>
+
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" value="@Model.Description"/>
+
+                <label asp-for="ImageLink" class="control-label"></label>
+                <input asp-for="ImageLink" class="form-control" value="@Model.ImageLink"/>
+
+                <input type="submit" value="Update Book" class="btn btn-primary"/>
+            }
+        </div>
+    </div>
+</div>
