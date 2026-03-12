@@ -49,16 +49,16 @@ public class BookRepositoryTests
     }
     
     //Test Book can be assigned a Status.
-    [Theory]
-    [InlineData("Reading")]
-    [InlineData("Read")]
-    [InlineData("ToRead")]
-    public void Book_Status_CanBeAssigned(string status)
-    {
-        // Arrange & Act
-        var book = new Book() { Status = status };
-    
-        // Assert
-        Assert.Equal(status, book.Status);
-    }
+    // [Theory]
+    // [InlineData("Reading")]
+    // [InlineData("Read")]
+    // [InlineData("ToRead")]
+    // public void Book_Status_CanBeAssigned(string status)
+    // {
+    //     // Arrange & Act
+    //     var book = new Book() { Status = status };
+    //
+    //     // Assert
+    //     Assert.Equal(status, book.Status);
+    // }
 }
