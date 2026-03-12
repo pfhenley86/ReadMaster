@@ -5,7 +5,6 @@ namespace BookMasterTests;
 public class BookModelTests
 {
     // Test Book Can Be Initialized
-    
     [Fact]
     public void Book_CanBeInitializedWithValues()
     {

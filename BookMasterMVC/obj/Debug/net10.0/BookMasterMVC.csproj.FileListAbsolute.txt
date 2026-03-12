@@ -22,7 +22,6 @@
 /Users/fordhenley/Documents/GitHub/repos/ReadMaster/BookMasterMVC/obj/Debug/net10.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
 /Users/fordhenley/Documents/GitHub/repos/ReadMaster/BookMasterMVC/obj/Debug/net10.0/scopedcss/bundle/BookMasterMVC.styles.css
 /Users/fordhenley/Documents/GitHub/repos/ReadMaster/BookMasterMVC/obj/Debug/net10.0/scopedcss/projectbundle/BookMasterMVC.bundle.scp.css
-/Users/fordhenley/Documents/GitHub/repos/ReadMaster/BookMasterMVC/obj/Debug/net10.0/compressed/viq7fj8830-{0}-lugek5hnai-lugek5hnai.gz
 /Users/fordhenley/Documents/GitHub/repos/ReadMaster/BookMasterMVC/obj/Debug/net10.0/compressed/3dqywmzpkv-{0}-61n19gt1b8-61n19gt1b8.gz
 /Users/fordhenley/Documents/GitHub/repos/ReadMaster/BookMasterMVC/obj/Debug/net10.0/compressed/ia3se6m7nh-{0}-fr7q2aak1r-fr7q2aak1r.gz
 /Users/fordhenley/Documents/GitHub/repos/ReadMaster/BookMasterMVC/obj/Debug/net10.0/compressed/atshqaeiic-{0}-bqjiyaj88i-bqjiyaj88i.gz
@@ -117,3 +116,4 @@
 /Users/fordhenley/Documents/GitHub/repos/ReadMaster/BookMasterMVC/obj/Debug/net10.0/BookMast.B93A8FA3.Up2Date
 /Users/fordhenley/Documents/GitHub/repos/ReadMaster/BookMasterMVC/bin/Debug/net10.0/Newtonsoft.Json.dll
 /Users/fordhenley/Documents/GitHub/repos/ReadMaster/BookMasterMVC/obj/Debug/net10.0/compressed/plwrx09bk8-{0}-7l2l83oy6r-7l2l83oy6r.gz
+/Users/fordhenley/Documents/GitHub/repos/ReadMaster/BookMasterMVC/obj/Debug/net10.0/compressed/viq7fj8830-{0}-6kjd4eexi4-6kjd4eexi4.gz

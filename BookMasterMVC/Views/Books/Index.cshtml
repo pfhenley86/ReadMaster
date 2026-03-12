@@ -1,23 +1,20 @@
 @model IEnumerable<Book>
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <h2>Book Dashboard</h2>
+<div class="row">
+    <div class="col">
+        <h2>Book Dashboard</h2>
+    </div>
+</div>
+    
+@foreach (var book in @Model)
+{
+    <div class="row p-2 mb-2">
+        <div class="col-sm col-md-3">
+                <img src="@book.ImageLink" alt="@book.Title" class="w-100"/>
+        </div>
+        <div class="col-sm col-md-9">
+            <p>@book.Description</p>
+            <a href="/Books/ViewBook/@book.BookID" class="btn btn-primary">View</a>
+            <a href="/Books/Update/@book.BookID" class="btn btn-warning">Edit</a>
         </div>
     </div>
-    
-        @foreach (var book in @Model)
-        {
-            <div class="row p-2 mb-2">
-                <div class="col col-md-3">
-                        <img src="@book.ImageLink" alt="@book.Title" class="img-fluid w-100"/>
-                </div>
-                <div class="col col-md-9">
-                    <p>@book.Description</p>
-                    <a href="/Books/ViewBook/@book.BookID" class="btn btn-primary">View</a>
-                    <a href="/Books/Update/@book.BookID" class="btn btn-warning">Edit</a>
-                </div>
-            </div>
-        }
-    
-</div>
+}

@@ -107,7 +107,7 @@ public class BooksController : Controller
             if (result == null || result.Items == null || result.Items.Count == 0)
             {
                 ViewBag.Message = "No books found.";
-                return View();
+                return View("Search");
             }
             
             var book = result?.Items?.First()?.VolumeInfo;
