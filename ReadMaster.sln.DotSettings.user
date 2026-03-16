@@ -4,6 +4,7 @@
     &lt;TestId&gt;xUnit::627D9B23-C293-43A3-A76B-75D512954672::net10.0::BookMasterTests.BookRepositoryTests&lt;/TestId&gt;
     &lt;TestId&gt;xUnit::627D9B23-C293-43A3-A76B-75D512954672::net10.0::BookMasterTests.BookModelTests.Book_CanBeInitializedWithValues&lt;/TestId&gt;
     &lt;TestId&gt;xUnit::627D9B23-C293-43A3-A76B-75D512954672::net10.0::BookMasterTests.BookModelTests.Book_InitializationWithInLineData_ChecksProperties&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::627D9B23-C293-43A3-A76B-75D512954672::net10.0::BookMasterTests.StatusModelTests&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=55a89873_002D9667_002D4c98_002D8de4_002D123e27120893/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="BookRepositoryTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;

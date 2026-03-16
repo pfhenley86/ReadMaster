@@ -1,0 +1,22 @@
+@model Status
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Add A Book Status To Your Library</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            @using (Html.BeginForm("InsertStatusToDatabase", "Status", FormMethod.Post))
+            {
+                <input asp-for="StatusID" type="hidden" value=""/>
+
+                <label asp-for="StatusName" class="control-label"></label>
+                <input asp-for="StatusName" class="form-control"/>
+
+                <input type="submit" value="Create Status" class="btn btn-primary"/>
+            }
+        </div>
+    </div>
+</div>

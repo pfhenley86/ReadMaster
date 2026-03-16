@@ -1,0 +1,21 @@
+@model Status
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Update @Model.StatusName</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            @using (Html.BeginForm("UpdateStatusToDatabase", "Status", FormMethod.Post))
+            {
+                <input asp-for="StatusID" type="hidden" value="@Model.StatusID" />
+
+                <label asp-for="StatusName" class="control-label"></label>
+                <input asp-for="StatusName" class="form-control" value="@Model.StatusName"/>
+
+                <input type="submit" value="Update Status" class="btn btn-primary"/>
+            }
+        </div>
+    </div>
+</div>
