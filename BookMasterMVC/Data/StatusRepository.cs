@@ -16,6 +16,11 @@ public class StatusRepository : IStatusRepository
     //Add get status for creation form
     
     // Create
+    public Status GetBookStatus(int id)
+    {
+        return _connection.QuerySingle<Status>("SELECT * FROM status WHERE StatusID = @id;", new { id });
+    }
+
     public void InsertStatus(Status statusToInsert)
     {
         _connection.Execute("INSERT INTO status (statusName) VALUES (@statusName);", 

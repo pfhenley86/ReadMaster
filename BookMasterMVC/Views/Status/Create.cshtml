@@ -1,18 +1,22 @@
-@model TModel
+@model Status
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Add A Book Status To Your Library</h2>
+        </div>
+    </div>
 
-@{
-    Layout = null;
-}
+    <div class="row">
+        <div class="col">
+            @using (Html.BeginForm("InsertStatusToDatabase", "Status", FormMethod.Post))
+            {
+                <input asp-for="StatusID" type="hidden" value=""/>
 
-<!DOCTYPE html>
+                <label asp-for="StatusName" class="control-label"></label>
+                <input asp-for="StatusName" class="form-control"/>
 
-<html>
-<head>
-    <title>title</title>
-</head>
-<body>
-<div>
-      
+                <input type="submit" value="Create Status" class="btn btn-primary"/>
+            }
+        </div>
+    </div>
 </div>
-</body>
-</html>
