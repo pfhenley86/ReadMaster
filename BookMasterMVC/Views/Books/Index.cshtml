@@ -13,7 +13,10 @@
         </div>
         <div class="col-sm col-md-9">
             <p>@book.Description</p>
-            <p>Quantity: <span>@book.Quantity</span> Owned: <span>@book.IsOwned</span></p>
+            <p>Quantity: <span>@book.Quantity</span></p>
+            <p>Owned: <span>@(book.IsOwned ? "Yes" : "No")</span></p>
+            <p>Status: <span>@book.Status</span></p>
+
             <a href="/Books/ViewBook/@book.BookID" class="btn btn-primary">View</a>
             <a href="/Books/Update/@book.BookID" class="btn btn-warning">Edit</a>
         </div>

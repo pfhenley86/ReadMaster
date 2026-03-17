@@ -40,18 +40,19 @@ public class BookRepository : IBookRepository
 
     public void UpdateBook(Book book)
     {
-        _connection.Execute("UPDATE books SET Title = @title, Author = @author WHERE BookID = @bookID;", 
-            new { book.Title, book.Author, bookID = book.BookID });
+        _connection.Execute(
+            @"UPDATE Books SET Title = @Title,Author = @Author, Description = @Description,ImageLink = @ImageLink, Quantity = @Quantity,IsOwned = @IsOwned,
+            StatusID = @StatusID WHERE BookID = @BookID;", new { book.Title, book.Author, book.Description, book.ImageLink, book.Quantity, book.IsOwned, book.StatusID, book.BookID});
     }
 
-    public IEnumerable<Status> GetStatus()
+    public List<Status> GetStatuses()
     {
-        return _connection.Query<Status>("SELECT * FROM status");
+        return _connection.Query<Status>("SELECT StatusID, StatusName FROM Status").ToList();
     }
 
     public Book AssignStatus()
     {
-        var statusList = GetStatus();
+        var statusList = GetStatuses();
         var book = new Book();
         book.Status = statusList;
         return book;

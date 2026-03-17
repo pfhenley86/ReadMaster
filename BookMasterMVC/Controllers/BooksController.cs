@@ -40,7 +40,10 @@ public class BooksController : Controller
         {
             return View("BookNotFound");
         }
-        
+
+        // Populate Status list for dropdown
+        book.Status = _repository.GetStatuses();  // <-- MUST NOT BE NULL
+
         return View(book);
     }
     
