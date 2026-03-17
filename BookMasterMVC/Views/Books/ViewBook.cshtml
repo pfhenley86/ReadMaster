@@ -11,6 +11,7 @@
             </div>
             <div class="col col-md-9">
                 <p>@Model.Description</p>
+                <p>Quantity: <span>@Model.Quantity</span> Owned: <span>@Model.IsOwned</span></p>
                 <a class="btn btn-primary" href="/Books/Update/@Model.BookID">Edit</a>
                 @using (Html.BeginForm("DeleteBook", "Books", FormMethod.Post))
                 {

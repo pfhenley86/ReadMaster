@@ -33,8 +33,8 @@ public class BookRepository : IBookRepository
     public void InsertBook(Book bookToInsert)
     {
         _connection.Execute(
-            "INSERT INTO books (Title, Author, Description, ImageLink, StatusID) VALUES (@Title, @Author, @Description, @ImageLink, @StatusID);",
-            new { bookToInsert.Title, bookToInsert.Author, bookToInsert.Description, bookToInsert.ImageLink, bookToInsert.StatusID
+            "INSERT INTO books (Title, Author, Description, ImageLink, Quantity, IsOwned, StatusID) VALUES (@Title, @Author, @Description, @ImageLink, Quantity, IsOwned, @StatusID);",
+            new { bookToInsert.Title, bookToInsert.Author, bookToInsert.Description, bookToInsert.ImageLink, bookToInsert.Quantity, bookToInsert.IsOwned, bookToInsert.StatusID
             });
     }
 
