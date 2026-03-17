@@ -37,7 +37,7 @@ public class StatusController : Controller
 
         _repository.InsertStatus(status);
 
-        return RedirectToAction("Books/Index");
+        return RedirectToAction("Index", "Books");
     }
     
     // Create Update Staus Form View
@@ -57,6 +57,6 @@ public class StatusController : Controller
     {
         _repository.UpdateStatus(status);
 
-        return RedirectToAction("Books/Index");
+        return RedirectToAction("Index", "Books");
     }
 }

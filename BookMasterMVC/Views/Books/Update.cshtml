@@ -9,19 +9,34 @@
         <div class="col">
             @using (Html.BeginForm("UpdateBookToDatabase", "Books", FormMethod.Post))
             {
-                <input asp-for="BookID" type="hidden" value="@Model.BookID" />
+                <input asp-for="BookID" type="hidden" />
 
-                <label asp-for="Title" class="control-label"></label>
-                <input asp-for="Title" class="form-control" value="@Model.Title"/>
+                <label asp-for="Title"></label>
+                <input asp-for="Title" class="form-control" />
 
-                <label asp-for="Author" class="control-label"></label>
-                <input asp-for="Author" class="form-control" value="@Model.Author"/>
+                <label asp-for="Author"></label>
+                <input asp-for="Author" class="form-control" />
 
-                <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" value="@Model.Description"/>
+                <label asp-for="Description"></label>
+                <input asp-for="Description" class="form-control" />
 
-                <label asp-for="ImageLink" class="control-label"></label>
-                <input asp-for="ImageLink" class="form-control" value="@Model.ImageLink"/>
+                <label asp-for="ImageLink"></label>
+                <input asp-for="ImageLink" class="form-control" />
+
+                <label asp-for="Quantity"></label>
+                <input asp-for="Quantity" class="form-control" />
+
+                <div class="form-check">
+                    <input asp-for="IsOwned" class="form-check-input" />
+                    <label asp-for="IsOwned" class="form-check-label"></label>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="StatusID"></label>
+                    <select asp-for="StatusID" class="form-control"
+                            asp-items="@(new SelectList(Model.Status, "StatusID", "StatusName"))">
+                    </select>
+                </div>
 
                 <input type="submit" value="Update Book" class="btn btn-primary"/>
             }

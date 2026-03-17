@@ -30,8 +30,8 @@ public class StatusRepository : IStatusRepository
     // Update
     public void UpdateStatus(Status status)
     {
-        _connection.Execute("UPDATE status SET statusName=@statusName WHERE statusID=@statusID;",
-            new { status = status.StatusName, statusID = status.StatusID });
+        _connection.Execute("UPDATE status SET StatusName=@StatusName WHERE StatusID=@StatusID;",
+            new { StatusName = status.StatusName, StatusID = status.StatusID });
     }
     
     // Delete
