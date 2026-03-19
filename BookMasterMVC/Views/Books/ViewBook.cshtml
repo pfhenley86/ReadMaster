@@ -13,7 +13,7 @@
                 <p>@Model.Description</p>
                 <p>Quantity: <span>@Model.Quantity</span></p>
                 <p>Owned: <span>@(Model.IsOwned ? "Yes" : "No")</span></p>
-                <p>Status: <span>@Model.Status</span></p>
+                <p>Status: <span>@(Model.StatusID >= 1 ? "Read" : "Want To Read")</span></p>
 
 
                 <a class="btn btn-primary" href="/Books/Update/@Model.BookID">Edit</a>
