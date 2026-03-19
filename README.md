@@ -84,7 +84,7 @@ git clone https://github.com/your-username/bookmaster.git
 ### 3. Run the application
 
 ```
-dotnet run
+dotnet run or click run in your IDE
 ```
 
 ### 4. Open in browser
