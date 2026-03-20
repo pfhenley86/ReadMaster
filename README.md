@@ -41,6 +41,7 @@ Read Master is a **C# ASP.NET MVC web application** that allows users to search 
 * **Database:** MySQL
 * **Data Access:** Dapper
 * **API:** Google Books API
+* **Testing:** xUnit
 
 ---
 
