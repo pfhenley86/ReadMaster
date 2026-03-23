@@ -16,7 +16,7 @@
                 <p>Status: <span>@(Model.StatusID >= 1 ? "Read" : "Want To Read")</span></p>
 
 
-                <a class="btn btn-primary" href="/Books/Update/@Model.BookID">Edit</a>
+                <a class="btn btn-warning" href="/Books/Update/@Model.BookID">Edit</a>
                 @using (Html.BeginForm("DeleteBook", "Books", FormMethod.Post))
                 {
                     <input type="hidden" asp-for="BookID" />
