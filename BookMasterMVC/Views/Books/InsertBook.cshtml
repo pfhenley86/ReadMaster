@@ -27,8 +27,10 @@
                 <label asp-for="Quantity" class="control-label"></label>
                 <input asp-for="Quantity" class="form-control"/>
                 
-                <label asp-for="IsOwned" class="control-label"></label>
-                <input asp-for="IsOwned" class="form-control"/>
+                <div class="form-check">
+                    <input asp-for="IsOwned" class="form-check-input" />
+                    <label asp-for="IsOwned" class="form-check-label"></label>
+                </div>
 
                 <div class="form-group">
                     <label>Select a Status</label>
